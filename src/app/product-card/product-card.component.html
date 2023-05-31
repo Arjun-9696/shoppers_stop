@@ -1,0 +1,20 @@
+<div class="product-card" (click)="redirectProductDetails(productData.id)">
+  <div class="image-container">
+    <img src="{{ productData.image }}" alt="{{ productData.name }}" />
+  </div>
+  <div class="productData-details">
+    <p class="category">{{ productData.category }}</p>
+    <p>{{ productData.name }}</p>
+    <p> ₹{{ productData.price }}</p>
+  </div>
+  <div class="button-container">
+    <button [class.onlyViewDetailsbtn]="!isSellerLoggedIn">
+      <fa-icon [icon]="viewdet"></fa-icon>
+      View details
+    </button>
+    <button *ngIf="isSellerLoggedIn" (click)="EditRedirect(productData.id)">
+      <fa-icon [icon]="faEditIcon"></fa-icon>
+      Edit
+    </button>
+  </div>
+</div>

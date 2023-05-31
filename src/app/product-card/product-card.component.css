@@ -1,0 +1,96 @@
+/* product card */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  cursor: pointer;
+}
+
+.product-card:hover{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.image-container {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  height: 200px;
+}
+
+.image-container img {
+  max-width: 100%;
+  min-width: 200px;
+  height: 100%;
+}
+.category{
+  font-size:15px
+}
+.product-details {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.button-container button {
+  border: none;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  width: 50%;
+  padding: 8px;
+}
+
+.button-container button:first-child {
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+}
+
+.button-container button:last-child {
+  margin-left: 25px;
+}
+
+.button-container button:first-child:hover {
+  background-color: transparent;
+  color: rgb(121, 121, 121);
+}
+
+.button-container button:hover {
+  background-color: green;
+  color: black;
+}
+
+.button-container fa-icon {
+  margin-right: 5px;
+}
+
+.onlyViewDetailsbtn{
+  width: 250px !important;
+  padding: 10px !important;
+  margin-left: 0px !important;
+}
+
+
+
+@media (max-width: 768px) {
+  .trendyHead {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .trendyHead {
+    font-size: 14px;
+  }
+}

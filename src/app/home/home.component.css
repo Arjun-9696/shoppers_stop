@@ -1,0 +1,84 @@
+.home_main_container_slider {
+  width: 100%;
+  max-height: 600px;
+  margin: auto;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+}
+
+.home_slider_container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.home_slider_container img {
+  min-width: 100%;
+  max-height: 600px;
+}
+
+.carousel_controls {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carousel_controls button {
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: rgb(0, 0, 0);
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.carousel_controls button:first-child {
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+.carousel_controls button:last-child {
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.carousel_controls button:hover {
+  color: #000000;
+  background-color: rgb(255, 255, 255);
+}
+
+.carousel_controls .prev_btn {
+  transform: rotate(180deg);
+}
+
+.carousel_controls .next_btn {
+  transform: rotate(-180deg);
+}
+
+/* product card */
+.show-trends-product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.trendyHead {
+  display: flex;
+  justify-content: center;
+  font-size: 26px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  font-family: sans-serif;
+}

@@ -1,0 +1,78 @@
+<div class="nav">
+  <div class="nav-content">
+    <div class="search">
+      <input
+        type="text"
+        #searchInput
+        placeholder="Search products..."
+        (input)="onSearchInput($event)"
+        (blur)="hideSearch()"
+      />
+      <button (click)="searchbtn(searchInput.value)">
+        <img src="../../assets/search.svg" alt="icon" height="15px" />
+      </button>
+      <!-- search result -->
+      <ul class="suggested-search" *ngIf="searchResult">
+        <li *ngFor="let item of searchResult">
+          <a (mousedown)="redirectToDetails(item.id)">{{ item.name }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="logo" routerLink="">
+      <img src="../../assets/newLogo.svg" alt="logo" width="300" />
+    </div>
+    <div [ngSwitch]="menuType">
+      <!-- for default nav menu -->
+      <ul
+        class="menu defaultMenu"
+        *ngSwitchCase="'default'"
+        [class.open]="isMenuOpen"
+      >
+        <!-- <li><a routerLink="seller-home">Seller</a></li> -->
+        <li><a routerLink="login">Login</a></li>
+        <li><a routerLink="auth">Signup</a></li>
+        <li>
+          <a routerLink="cart"
+            >Cart <span>{{ cartItems }}</span>
+          </a>
+        </li>
+      </ul>
+      <!-- for seller nav menu -->
+      <ul
+        class="menu sellerMenu"
+        *ngSwitchCase="'seller'"
+        [class.open]="isMenuOpen"
+      >
+        <li><a routerLink="seller-add-product">Add Product</a></li>
+        <li><a routerLink="seller-home">List</a></li>
+        <li><a (click)="sellerLogout()">Logout</a></li>
+        <li>
+          <a>{{ sellerName | titlecase }}</a>
+        </li>
+      </ul>
+      <!-- for user nav menu -->
+      <ul
+        class="menu userMenu"
+        *ngSwitchCase="'user'"
+        [class.open]="isMenuOpen"
+      >
+        <!-- <li><a routerLink="">Home</a></li> -->
+        <li>
+          <a>{{ userName | titlecase }}</a>
+        </li>
+        <li>
+          <a routerLink="cart"
+            >Cart <span>{{ cartItems }}</span>
+          </a>
+        </li>
+        <li><a (click)="userLogout()">Logout</a></li>
+      </ul>
+      <!-- hamburger menu for responsive screen -->
+      <div class="burger" (click)="toggleMenu()" [class.open]="isMenuOpen">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
+</div>
